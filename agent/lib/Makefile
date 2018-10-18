@@ -34,3 +34,6 @@ subdir = contrib/$(MODULE_big)
 include $(makefile_global)
 include $(top_srcdir)/contrib/contrib-global.mk
 endif
+
+# fix upstream issues on the package for debian-based systems
+PG_LIBS += -L$(shell $(PG_CONFIG) --pkglibdir)

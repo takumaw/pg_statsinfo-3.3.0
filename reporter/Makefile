@@ -38,3 +38,6 @@ endif
 
 # exclude libraries which are not required
 LIBS := $(filter -lpgport -lpgcommon, $(LIBS))
+
+# fix upstream issues on the package for debian-based systems
+PG_LIBS += -L$(shell $(PG_CONFIG) --pkglibdir)
